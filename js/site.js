@@ -131,7 +131,7 @@ function draw() {
       }
     }
   }
-  ctx.lineWidth = 0.15;
+  ctx.lineWidth = 0.06;
   ctx.strokeStyle = '#000';
   ctx.stroke();
 }
