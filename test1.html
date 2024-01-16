@@ -1,0 +1,25 @@
+<!-- build a betslip for a betting site with style fancy with black and yellow -->
+<div style="background-color:black; color:yellow; font-family:fancy; padding:20px;">
+  <h1>Bet Slip</h1>
+  <form>
+    <label>Select Team:</label><br>
+    <select name="team">
+      <option value="Team A">Team A</option>
+      <option value="Team B">Team B</option>
+      <option value="Team C">Team C</option>
+    </select><br><br>
+
+    <label>Select Bet Type:</label><br>
+    <select name="betType">
+      <option value="Win/Lose">Win/Lose</option>
+      <option value="Over/Under">Over/Under</option>
+      <option value="Handicap Betting">Handicap Betting</option>
+    </select><br><br>
+
+    <label for="stakeAmount">Stake Amount: </label><br/> 
+    <input type="number" name="stakeAmount" id="stakeAmount"><br/>
+
+    <input type="submit" value="Place Bet"/> 
+
+  </form>  
+</div>
