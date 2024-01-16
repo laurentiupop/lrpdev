@@ -81,7 +81,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var stars = [], // Array that contains the stars
-    FPS = 60, // Frames per second
+    FPS = 80, // Frames per second
     x = 100, // Number of stars
     mouse = {
       x: 0,
@@ -89,7 +89,6 @@ var stars = [], // Array that contains the stars
     };  // mouse location
 
 // Push stars to array
-
 for (var i = 0; i < x; i++) {
   stars.push({
     x: Math.random() * canvas.width,
@@ -122,12 +121,12 @@ function draw() {
   for (var i = 0, x = stars.length; i < x; i++) {
     var starI = stars[i];
     ctx.moveTo(starI.x,starI.y); 
-    if(distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+    if(distance(mouse, starI) < 100) ctx.lineTo(mouse.x, mouse.y);
     for (var j = 0, x = stars.length; j < x; j++) {
       var starII = stars[j];
-      if(distance(starI, starII) < 150) {
+      if(distance(starI, starII) < 100) {
         //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
-        ctx.lineTo(starII.x,starII.y); 
+        ctx.quadraticCurveTo(starI.x, starI.y, starII.x, starII.y);
       }
     }
   }
