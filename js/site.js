@@ -121,10 +121,10 @@ function draw() {
   for (var i = 0, x = stars.length; i < x; i++) {
     var starI = stars[i];
     ctx.moveTo(starI.x,starI.y); 
-    if(distance(mouse, starI) < 100) ctx.lineTo(mouse.x, mouse.y);
+    if(distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
     for (var j = 0, x = stars.length; j < x; j++) {
       var starII = stars[j];
-      if(distance(starI, starII) < 100) {
+      if(distance(starI, starII) < 150) {
         //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
         ctx.quadraticCurveTo(starI.x, starI.y, starII.x, starII.y);
       }
