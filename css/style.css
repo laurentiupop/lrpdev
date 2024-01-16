@@ -2119,7 +2119,9 @@ blockquote {
         margin:0;
         padding:0;
     }
-
+    #logo img{
+        max-height: 112px!important;
+    }
     .page-border, #scrollUp, #scrollUp:before {
         display:none;
     }
