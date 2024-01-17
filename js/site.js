@@ -77,8 +77,10 @@ $(window).load(function () { // makes sure the whole site is loaded
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = window.innerWidth * window.devicePixelRatio;
+canvas.height = window.innerHeight * window.devicePixelRatio;
+ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
 
 var stars = [], // Array that contains the stars
     FPS = 80, // Frames per second
@@ -131,7 +133,7 @@ function draw() {
       }
     }
   }
-  ctx.lineWidth = 0.06;
+  ctx.lineWidth = 0.06 * window.devicePixelRatio;
   ctx.strokeStyle = '#000';
   ctx.stroke();
 }
@@ -163,9 +165,9 @@ function update() {
   }
 }
 
-canvas.addEventListener('mousemove', function(e){
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+canvas.addEventListener('mousemove', function (e) {
+  mouse.x = e.clientX * window.devicePixelRatio;
+  mouse.y = e.clientY * window.devicePixelRatio;
 });
 
 // Update and draw
