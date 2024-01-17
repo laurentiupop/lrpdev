@@ -106,7 +106,7 @@ function draw() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
   
   ctx.globalCompositeOperation = "lighter";
-  
+  ctx.imageSmoothingEnabled = false;
   for (var i = 0, x = stars.length; i < x; i++) {
     var s = stars[i];
   
