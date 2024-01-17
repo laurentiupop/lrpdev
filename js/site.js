@@ -79,8 +79,6 @@ var canvas = document.getElementById("canvas"),
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-
 
 var stars = [], // Array that contains the stars
     FPS = 80, // Frames per second
@@ -133,7 +131,7 @@ function draw() {
       }
     }
   }
-  ctx.lineWidth = 0.06 * window.devicePixelRatio;
+  ctx.lineWidth = 0.06;
   ctx.strokeStyle = '#000';
   ctx.stroke();
 }
@@ -165,9 +163,9 @@ function update() {
   }
 }
 
-canvas.addEventListener('mousemove', function (e) {
-  mouse.x = e.clientX * window.devicePixelRatio;
-  mouse.y = e.clientY * window.devicePixelRatio;
+canvas.addEventListener('mousemove', function(e){
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
 });
 
 // Update and draw
